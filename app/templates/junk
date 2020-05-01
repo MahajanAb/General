@@ -1,0 +1,7 @@
+<!--p>
+            {{ form.year.label }}<br>
+            {{ form.year(size=32) }}
+            {% for error in form.year.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p--> 

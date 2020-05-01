@@ -1,0 +1,32 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Xoriant</title>
+        {% else %}
+        <title>Welcome to Xoriant</title>
+        {% endif %}
+    </head>
+    <body>
+        <nav>
+            Xoriant:
+            <a href="{{ url_for('index')}}">Home</a>
+            <a href="{{ url_for('login')}}">Login</a>
+            <a href="{{ url_for('company_query')}}">View Data</a>
+            <a href="{{ url_for('edit_company')}}">Edit Data</a>
+            <a href="{{ url_for('upload_company')}}">Export Company</a>
+            <a href="{{ url_for('upload_companydata')}}">Export Company Data</a>
+            
+        </nav>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

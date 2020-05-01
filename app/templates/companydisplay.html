@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Here is the company data for {{company_data.name}}:</h1>
+    {%for item in company_data%}
+    <ul>  
+        <li>
+            <span class="field-name"><strong>Financial year:</strong></span> 
+            <span class="field-value"><strong>{{ item.financial_year}}</strong>
+        </li>
+        <li><span class="field-name">Annual sales:</span> 
+            <span class="field-value">{{ item.annual_sales}}</span>
+        </li>
+        <li><span class="field-name">Book value equity:</span> 
+            <span class="field-value">{{ item.book_value_equity}}</span>
+        </li>
+        <li><span class="field-name">Total current assets:</span> 
+            <span class="field-value">{{ item.total_current_assets}}</span>
+        </li>
+        <li><span class="field-name">Total current liabilities:</span> 
+            <span class="field-value">{{ item.total_current_liabilites}}</span>
+        </li>
+        <li><span class="field-name">Earnings before interest and tax:</span> 
+            <span class="field-value">{{ item.earnings_before_interest_tax}}</span>
+        </li>
+        <li><span class="field-name">Retained earnings:</span> 
+            <span class="field-value">{{ item.retained_earnings}}</span>
+        </li>
+        <li><span class="field-name">BRS:</span> 
+            <span class="field-value">{{ item.BRS}}</span>
+        </li>
+        <li><span class="field-name">BRZ:</span> 
+            <span class="field-value">{{ item.BRZ}}</span>
+        </li>      
+    </ul>
+    {%endfor%}              
+</main>
+{% endblock %}

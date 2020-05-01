@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{user_id}} Enter Company Data:</h1>
+    <form action="" method="POST" >
+        {{ form.hidden_tag() }}
+       
+        <p>
+            {{ form.company_name.label }}<br>
+            {{ form.company_name(size=32) }}<br>
+            {% for error in form.company_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.financial_year.label }}<br>
+            {{ form.financial_year(size=32) }}<br>
+            {% for error in form.financial_year.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.annual_sales.label }}<br>
+            {{ form.annual_sales(size=32) }}<br>
+            {% for error in form.annual_sales.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.book_value_equity.label }}<br>
+            {{ form.book_value_equity(size=32) }}<br>
+            {% for error in form.book_value_equity.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.total_current_assets.label }}<br>
+            {{ form.total_current_assets(size=32) }}<br>
+            {% for error in form.total_current_assets.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+                <p>
+            {{ form.total_current_liabilities.label }}<br>
+            {{ form.total_current_liabilities(size=32) }}<br>
+            {% for error in form.total_current_liabilities.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.earnings_before_interest_tax.label }}<br>
+            {{ form.earnings_before_interest_tax(size=32) }}<br>
+            {% for error in form.earnings_before_interest_tax.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.retained_earnings.label }}<br>
+            {{ form.retained_earnings(size=32) }}<br>
+            {% for error in form.retained_earnings.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.BRS.label }}<br>
+            {{ form.BRS(size=32) }}<br>
+            {% for error in form.BRS.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.BRZ.label }}<br>
+            {{ form.BRZ(size=32) }}<br>
+            {% for error in form.BRZ.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% endblock %}
